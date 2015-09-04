@@ -29,7 +29,7 @@ console.log( focus.toString() );
  */
 
 
-/* Solution
+/* A better solution
  * Construnctor with prototypes
  */
 
