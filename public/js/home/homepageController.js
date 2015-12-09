@@ -1,9 +1,7 @@
 (function(angular){
 	angular
-	.module('MainCtrl')
+	.module('jsPatternsApp.mainCtrl')
 	.controller('MainController', function($scope) {
-
-    	console.log("Home contrlr");
-
-	});	
+		console.log("main Ctrl");
+	});
 })(window.angular);

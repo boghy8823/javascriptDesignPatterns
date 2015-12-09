@@ -17,30 +17,29 @@
 	<!-- Angular stuff -->
 
 	
-	<script src="js/module_pattern/ModulePatternController"></script>
-	<script src="js/home/homepageController.js"></script>
+	<script src="js/app.js"></script>	
 	<script src="js/appRoutes.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/home/homepageController.js"></script>
+	<script src="js/module_pattern/ModulePatternController.js"></script>
 
 </head>
-<body ng-app="javascriptsDesignPatterns">
-<div class="container">
-	
-	<!-- Header -->
-	<nav class="navbar">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Home</a>
+	<body ng-app="jsPatternsApp">
+		<div class="container">
+			
+			<!-- Header -->
+			<nav class="navbar">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Home</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					<li><a href="/module-pattern">Module Pattern</a></li>
+				</ul>
+			</nav>
+
+			<!-- Angular Dynamic content -->
+			<div ng-view=""></div>
 		</div>
-
-		<ul class="nav navbar-nav">
-			<li><a href="/module-pattern">Module Pattern</a></li>
-		</ul>
-	</nav>
-
-
-<!-- Angular Dynamic content -->
-<div ng-view></div>
-</div>
-	
-</body>
+		
+	</body>
 </html>

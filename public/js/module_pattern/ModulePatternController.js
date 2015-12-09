@@ -1,9 +1,7 @@
 (function(angular){
 	angular
-	.module('ModulePattern')
+	.module('jsPatternsApp.modulePattern')
 	.controller('ModulePatternController', function( $scope ){
-		
-		console.log("This is the controller");
-		
+		console.log("This is the module pattern controller");
 	});
 })(window.angular);

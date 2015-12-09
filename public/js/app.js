@@ -1,12 +1,16 @@
-angular.module('ModulePattern', []);
+(function(angular){
 
-angular.module('MainCtrl', []);
+	angular.module('appRoutes', []);
 
-angular.module('appRoutes', []);
+	angular.module('jsPatternsApp.mainCtrl', []);
+	
+	angular.module('jsPatternsApp.modulePattern', []);
 
-angular.module('javascriptsDesignPatterns',[
-		'ngRoute',
-		'ModulePattern',
-		'MainCtrl',
-		'appRoutes'
+	angular.module('jsPatternsApp',[
+			'ngRoute',
+			'appRoutes',
+			'jsPatternsApp.mainCtrl',
+			'jsPatternsApp.modulePattern'
 	]);
+
+})(window.angular);
