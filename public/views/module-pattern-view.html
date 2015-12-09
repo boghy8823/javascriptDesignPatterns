@@ -1,1 +1,37 @@
-<div> Magic on the controller </div>
+<div>
+ 	
+ 	<p>Magic on the controller </p>
+
+ 	<textarea id="code"></textarea>
+ 	<button id="safe">eval() in a sandboxed frame.</button>	
+ 	<iframe sandbox="allow-scripts" id="sandboxed" ng-bind="trustedMarkup"></iframe>
+ 	
+ 	<script>
+ 		window.addEventListener('message',
+		    function (e) {
+		    	console.log("Message");
+		      // Sandboxed iframes which lack the 'allow-same-origin'
+		      // header have "null" rather than a valid origin. This means you still
+		      // have to be careful about accepting data via the messaging API you
+		      // create. Check that source, and validate those inputs!
+		      var frame = document.getElementById('sandboxed');
+		      if (e.origin === "null" && e.source === frame.contentWindow)
+		        alert('Result: ' + e.data);
+		 });
+
+		function evaluate() {
+			console.log("evaluate");
+		  var frame = document.getElementById('sandboxed');
+		  var code = document.getElementById('code').value;
+		  // Note that we're sending the message to "*", rather than some specific
+		  // origin. Sandboxed iframes which lack the 'allow-same-origin' header
+		  // don't have an origin which you can target: you'll have to send to any
+		  // origin, which might alow some esoteric attacks. Validate your output!
+		  frame.contentWindow.postMessage(code, '*');
+		}
+
+		document.getElementById('safe').addEventListener('click', evaluate);
+ 	</script>
+ 	
+ 	
+ </div>
