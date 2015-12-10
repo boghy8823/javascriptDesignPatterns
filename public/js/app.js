@@ -1,12 +1,13 @@
+angular.module('appRoutes', []);
+
 angular.module('ModulePattern', []);
 
 angular.module('MainCtrl', []);
 
-angular.module('appRoutes', []);
 
 angular.module('javascriptsDesignPatterns',[
 		'ngRoute',
+		'appRoutes',
 		'ModulePattern',
-		'MainCtrl',
-		'appRoutes'
+		'MainCtrl'
 	]);
